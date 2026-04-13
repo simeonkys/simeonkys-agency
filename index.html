@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimeonKys Agency - T-shirts Personnalisés Indusa</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h2>SimeonKys Agency</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#produits">Produits</a></li>
+                    <li><a href="#personnaliser" class="btn-customize">Personnaliser</a></li>
+                    <li><a href="#panier" id="cart-link">Panier (<span id="cart-count">0</span>)</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>T-shirts Personnalisés Indusa</h1>
+            <p>Créez votre t-shirt unique avec SimeonKys Agency. Qualité premium, designs indémodables.</p>
+            <a href="#personnaliser" class="btn-primary">Commencer la Personnalisation</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="produits" class="products">
+        <div class="container">
+            <h2>Nos T-shirts Indusa</h2>
+            <div class="products-grid">
+                <div class="product-card" data-product='{"name":"T-shirt Indusa Blanc", "price":29.99, "image":"https://via.placeholder.com/300x400/ffffff/000000?text=Indusa+Blanc"}'>
+                    <img src="https://via.placeholder.com/300x400/ffffff/000000?text=Indusa+Blanc" alt="T-shirt Blanc">
+                    <h3>T-shirt Indusa Blanc</h3>
+                    <p class="price">29,99€</p>
+                    <button class="btn-add-cart">Ajouter au Panier</button>
+                </div>
+                <div class="product-card" data-product='{"name":"T-shirt Indusa Noir", "price":34.99, "image":"https://via.placeholder.com/300x400/000000/ffffff?text=Indusa+Noir"}'>
+                    <img src="https://via.placeholder.com/300x400/000000/ffffff?text=Indusa+Noir" alt="T-shirt Noir">
+                    <h3>T-shirt Indusa Noir</h3>
+                    <p class="price">34,99€</p>
+                    <button class="btn-add-cart">Ajouter au Panier</button>
+                </div>
+                <div class="product-card" data-product='{"name":"T-shirt Indusa Bleu", "price":32.99, "image":"https://via.placeholder.com/300x400/1e3a8a/ffffff?text=Indusa+Bleu"}'>
+                    <img src="https://via.placeholder.com/300x400/1e3a8a/ffffff?text=Indusa+Bleu" alt="T-shirt Bleu">
+                    <h3>T-shirt Indusa Bleu</h3>
+                    <p class="price">32,99€</p>
+                    <button class="btn-add-cart">Ajouter au Panier</button>
+                </div>
+                <div class="product-card" data-product='{"name":"T-shirt Indusa Vert", "price":31.99, "image":"https://via.placeholder.com/300x400/10b981/ffffff?text=Indusa+Vert"}'>
+                    <img src="https://via.placeholder.com/300x400/10b981/ffffff?text=Indusa+Vert" alt="T-shirt Vert">
+                    <h3>T-shirt Indusa Vert</h3>
+                    <p class="price">31,99€</p>
+                    <button class="btn-add-cart">Ajouter au Panier</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customization Section -->
+    <section id="personnaliser" class="customize">
+        <div class="container">
+            <h2>Personnalisez Votre T-shirt</h2>
+            <div class="customize-grid">
+                <div class="preview-section">
+                    <h3>Aperçu</h3>
+                    <canvas id="tshirt-canvas" width="300" height="400"></canvas>
+                </div>
+                <div class="form-section">
+                    <form id="custom-form">
+                        <label>T-shirt Base:</label>
+                        <select id="base-shirt">
+                            <option value="white">Blanc</option>
+                            <option value="black">Noir</option>
+                            <option value="blue">Bleu</option>
+                            <option value="green">Vert</option>
+                        </select>
+
+                        <label>Taille:</label>
+                        <select id="size">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+
+                        <label>Texte Personnalisé:</label>
+                        <input type="text" id="custom-text" placeholder="Votre texte ici..." maxlength="20">
+
+                        <label>Couleur du Texte:</label>
+                        <input type="color" id="text-color" value="#ffffff">
+
+                        <label>Image (optionnel):</label>
+                        <input type="file" id="custom-image" accept="image/*">
+
+                        <div class="price-preview">Prix: <span id="custom-price">29,99€</span></div>
+                        <button type="button" class="btn-primary btn-customize-save">Ajouter au Panier Personnalisé</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section id="panier" class="cart">
+        <div class="container">
+            <h2>Votre Panier</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <h3>Total: <span id="cart-total">0,00€</span></h3>
+                <button id="checkout-btn" class="btn-primary" disabled>Passer à la Caisse</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SimeonKys Agency. Tous droits réservés. | Contact: info@simeonkys.com</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
